@@ -6,6 +6,17 @@ kind: APIExport
 metadata:
   name: has
 spec:
+  permissionClaims:
+  - group: ""
+    resource: "secrets"
+  - group: ""
+    resource: "namespaces"
+  - identityHash: ENVIRONMENT_IDENTITY_HASH
+    group: "appstudio.redhat.com"
+    resource: "environments"
+  - identityHash: GITOPS_IDENTITY_HASH
+    group: "appstudio.redhat.com"
+    resource: "applicationsnapshotenvironmentbindings"
   latestResourceSchemas:
     - v202208221503.applications.appstudio.redhat.com
     - v202208221503.componentdetectionqueries.appstudio.redhat.com
